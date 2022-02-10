@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import './App.css'
+import Quotes from './pages/quote'
 
 
 export type QuotesType = {

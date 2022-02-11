@@ -22,7 +22,7 @@ function App() {
 
   // Fetching the server (All quotes)
   useEffect(() => {
-    fetch(`http://localhost:1234/quotes`)
+    fetch('http://localhost:1234/quotes')
       .then(resp => resp.json())
       .then(serverQuotes => setQuotes(serverQuotes))
   }, [])
@@ -30,14 +30,15 @@ function App() {
 
   // Fetching only one quote based on id
 
-  useEffect(() => {
-    fetch(`http://localhost:1234/quotes/:id`)
-      .then(resp => resp.json())
-      .then(serverQuotes => setQuotes(serverQuotes))
-  }, [])
+  // useEffect(() => {
+  //   fetch(`http://localhost:1234/quotes/:id`)
+  //     .then(resp => resp.json())
+  //     .then(serverQuotes => setQuotes(serverQuotes))
+  // }, [])
 
   return (
     <div className="App">
+      <h1>Quotes</h1>
       {
         quotes.map(quote =>
           <Quotes key={quote.id} quote={quote} />

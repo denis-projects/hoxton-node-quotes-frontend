@@ -4,7 +4,7 @@ import './App.css'
 import Quotes from './pages/quote'
 
 
-export type QuotesType = {
+export type QuoteType = {
   id: number
   philosopher: string
   philosopy: string
@@ -13,12 +13,7 @@ export type QuotesType = {
 function App() {
 
   //state for all the quotes
-  const [quotes, setQuotes] = useState<QuotesType[]>([])
-  //state for one quote
-  // const [quote, setQuote] = useState<QuotesType[]>([])
-  console.log(quotes)
-
-
+  const [quotes, setQuotes] = useState<QuoteType[]>([])
 
   // Fetching the server (All quotes)
   useEffect(() => {
@@ -28,13 +23,19 @@ function App() {
   }, [])
 
 
-  // Fetching only one quote based on id
 
-  // useEffect(() => {
-  //   fetch(`http://localhost:1234/quotes/:id`)
-  //     .then(resp => resp.json())
-  //     .then(serverQuotes => setQuotes(serverQuotes))
-  // }, [])
+  //state for one quote random
+  const [randomQuote, setRandomQuote] = useState<QuoteType | null>(null)
+  console.log(randomQuote)
+
+
+  // Fetching only one random quote
+
+  useEffect(() => {
+    fetch(`http://localhost:1234/randomQuote/`)
+      .then(resp => resp.json())
+      .then(serverQuotes => setRandomQuote(serverQuotes))
+  }, [])
 
   return (
     <div className="App">

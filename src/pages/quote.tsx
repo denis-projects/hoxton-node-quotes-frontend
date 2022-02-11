@@ -1,7 +1,7 @@
-import { QuotesType } from "../App"
+import { QuoteType } from "../App"
 
 type Params = {
-    quote: QuotesType
+    quote: QuoteType
 }
 
 function Quotes({ quote }: Params) {

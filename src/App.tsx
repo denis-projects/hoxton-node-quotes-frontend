@@ -7,7 +7,7 @@ import Quotes from './pages/quote'
 export type QuotesType = {
   id: number
   philosopher: string
-  philosophy: string
+  philosopy: string
 }
 
 function App() {
@@ -15,8 +15,8 @@ function App() {
   //state for all the quotes
   const [quotes, setQuotes] = useState<QuotesType[]>([])
   //state for one quote
-  const [quote, setQuote] = useState<QuotesType[]>([])
-
+  // const [quote, setQuote] = useState<QuotesType[]>([])
+  console.log(quotes)
 
 
 

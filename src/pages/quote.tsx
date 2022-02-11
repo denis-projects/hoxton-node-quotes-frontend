@@ -8,7 +8,7 @@ function Quotes({ quote }: Params) {
     return (
         <div>
             <h3>{quote.philosopher}</h3>
-            <p>{quote.philosophy}</p>
+            <p>{quote.philosopy}</p>
         </div>
     )
 }

@@ -34,7 +34,7 @@ function App() {
   useEffect(() => {
     fetch(`http://localhost:1234/randomQuote/`)
       .then(resp => resp.json())
-      .then(serverQuotes => setRandomQuote(serverQuotes))
+      .then(random => setRandomQuote(random))
   }, [])
 
   return (
@@ -45,6 +45,8 @@ function App() {
           <Quotes key={quote.id} quote={quote} />
 
         )}
+
+
 
     </div>
   )

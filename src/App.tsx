@@ -1,13 +1,18 @@
 import { useEffect, useState } from 'react'
-
+import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Quotes from './pages/quote'
+import SingleQuote from './pages/SingleQuote'
 
 
 export type QuoteType = {
   id: number
   philosopher: string
   philosopy: string
+  age: number
+  firstName: string
+  lastName: string
+  image: string
 }
 
 function App() {
@@ -39,14 +44,12 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Quotes</h1>
-      {
-        quotes.map(quote =>
-          <Quotes key={quote.id} quote={quote} />
 
-        )}
-
-
+      <Routes>
+        <Route index element={<Navigate replace to="/quotes" />} />
+        <Route path='/quotes' element={<Quotes quotes={quotes} />} />
+        <Route path='/quotes/:id' element={<SingleQuote quotes={quotes} />} />
+      </Routes>
 
     </div>
   )
